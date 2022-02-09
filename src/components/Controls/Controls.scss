@@ -1,0 +1,66 @@
+@import "../../scss/index.scss";
+
+.container-controls {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+
+  /* background-color: red; */
+
+  &__content {
+    /* margin: auto; */
+    width: 95%;
+    /* background-color: green; */
+
+    &__title {
+      /* margin: auto; */
+      display: inline-flex;
+      width: 50%;
+      height: 22px;
+      /* background-color: aqua; */
+
+      p {
+        margin: auto;
+        margin-left: -6px;
+        font-family: "Telma-Variable";
+        color: azure;
+        font-size: $standar-font-size;
+      }
+      button {
+        height: 100%;
+        background: none;
+        outline: none;
+        border: none;
+        margin-top: auto;
+        cursor: pointer;
+
+        i {
+          margin-top: 5.5px;
+          margin-left: -5px;
+          margin-right: 10px;
+          font-size: 14px;
+          color: azure;
+        }
+      }
+    }
+
+    &__audio {
+      margin-top: 5px;
+      height: 22px;
+      display: flex;
+      /* background-color: aqua; */
+
+      i {
+        margin-top: 5px;
+        color: azure;
+        font-size: 17px;
+      }
+      input {
+        margin-top: 10px;
+        width: 90%;
+        height: 5px;
+      }
+    }
+  }
+}
