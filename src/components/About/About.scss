@@ -1,0 +1,64 @@
+@import "../../scss/index.scss";
+@import url("../../assets/css/telma.css");
+
+.container-about {
+  display: flex;
+  flex-direction: column;
+  max-width: $normal-container-size - 50;
+  margin: auto;
+
+  &__content {
+    text-align: right;
+    margin: 10px;
+    span {
+      color: azure;
+      font-family: "Telma-Variable";
+      font-size: $standar-font-size;
+      a {
+        text-decoration: none;
+        font-family: "Telma-Variable";
+        color: azure;
+        cursor: pointer;
+        &:hover {
+          
+          color: rgb(115, 105, 105);
+          text-decoration: underline;
+        }
+        
+      }
+    }
+
+    &__theme {
+      width: 200px;
+      height: 100%;
+      display: inline-block;
+      margin: auto;
+
+      &__text {
+        float: left;
+        width: 175px;
+        height: 25px;
+        margin: auto;
+        span {
+          margin-right: 6px;
+          margin-top: -10px;
+          text-align: center;
+        }
+      }
+
+      &__button {
+        float: right;
+        width: 25px;
+        height: 25px;
+        margin: auto;
+
+        input {
+          width: 20px;
+          height: 15px;
+          margin-top: 5px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
