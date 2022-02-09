@@ -1,0 +1,19 @@
+@import "../../scss/index.scss";
+
+.container-banner {
+  display: flex;
+  max-width: $coofie-container;
+  flex-direction: column;
+  /* background-color: red; */
+  height: 100%;
+  margin: auto;
+
+  &__content {
+    margin: auto;
+
+    img{
+      width: 140px;
+      border-radius: 50%;
+    }
+  }
+}
