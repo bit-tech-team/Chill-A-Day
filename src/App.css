@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 0.9fr;
+  grid-template-rows: 0.4fr 2.4fr 0.2fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "spotify_section banner_section info_section"
+    "spotify_section banner_section buttons_section"
+    "coffie_section footer_section footer_section";
+}
+
+.spotify_section {
+  grid-area: spotify_section;
+  height: 585.5px;
+}
+
+.coffie_section {
+  grid-area: coffie_section;
+}
+
+.banner_section {
+  grid-area: banner_section;
+  /* background-color: aqua; */
+}
+
+.info_section {
+  grid-area: info_section;
+}
+
+.buttons_section {
+  grid-area: buttons_section;
+  /* background-color: brown; */
+}
+
+.footer_section {
+  grid-area: footer_section;
+}

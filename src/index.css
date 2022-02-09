@@ -1,0 +1,152 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 10pt;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #949aa7;
+  background-image: url("../src/assets/img/background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.mainApp {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  border: 1px solid #343848;
+  -webkit-box-sizing: border-box;
+  background-image: url();
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mainApp > .topBar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  border-bottom: 3px solid #343848;
+  background-color: #181023;
+  -webkit-user-select: none;
+}
+
+.topBar > .titleBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.topBar > .titleBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.titleBar > .toggleButton {
+  width: 45px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.titleBar > .toggleButton:hover {
+  background-color: #272c36;
+}
+
+.titleBar > .toggleButton:active {
+  background-color: #4f9fee;
+}
+
+.titleBar > img {
+  margin-left: 10px;
+}
+
+.titleBar > .title {
+  margin-left: 10px;
+  width: 100%;
+  line-height: 30px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  -webkit-app-region: drag;
+}
+
+.topBar > .titleBarBtns {
+  display: flex;
+  flex-direction: row;
+  width: 120px;
+  height: 40px;
+}
+
+.titleBarBtns > .topBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.titleBarBtns > .topBtn:hover {
+  background-color: #272c36;
+}
+
+.titleBarBtns > .topBtn:active {
+  background-color: #4f9fee;
+}
+
+.titleBarBtns > .maximizeBtn {
+  font-size: 17px;
+  margin: auto;
+  color: white;
+}
+
+.titleBarBtns > .minimizeBtn {
+  font-size: 20px;
+  color: white;
+  margin: auto;
+}
+
+.titleBarBtns > .restoreBtn {
+  font-size: 20px;
+  color: white;
+  margin: auto;
+}
+
+.titleBarBtns > .closeBtn {
+  font-size: 15px;
+  margin: auto;
+  color: white;
+}
+
+/* .mainApp > .contentArea {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.contentArea > .contentPages {
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+} */
