@@ -1,0 +1,31 @@
+@import "../../scss/index.scss";
+@import url("../../assets/css/telma.css");
+.container-footer {
+  display: flex;
+  height: 80%;
+  margin: 5px;
+
+  &__content {
+    margin: auto;
+
+    span {
+      font-family: "Telma-Variable";
+      color: aliceblue;
+      font-size: 16px;
+      text-align: left;
+
+      a {
+        text-decoration: none;
+        font-family: "Telma-Variable";
+        color: rgb(115, 105, 105);
+        cursor: pointer;
+        &:hover {
+          color: azure;
+          text-decoration: underline;
+        }
+        
+      }
+      
+    }
+  }
+}
