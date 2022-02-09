@@ -1,0 +1,19 @@
+@import "../../scss/index.scss";
+
+.container-coffie {
+  display: flex;
+  max-width: $coofie-container;
+  margin: 5px;
+  flex-direction: column;
+  height: 80%;
+
+  &__content {
+    margin-top: auto;
+    align-self: center;
+
+    img {
+      border: 0px;
+      height: 36px;
+    }
+  }
+}
