@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <script defer src="js/appFunctions.js"></script>
+  <title>Chill-A-Day</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div class="mainApp">
+    <div class="topBar">
+      <div class="titleBar">
+        <button id="showHideMenus" class="toggleButton"></button>
+        <img src="icons/icon_top_bar.png" alt="">
+        <div class="title">
+          Chill-A-Day
+        </div>
+      </div>
+      <div class="titleBarBtns">
+        <button id="minimizeBtn" class="topBtn minimizeBtn" title="Minimize">-</button>
+        <button id="closeBtn" class="topBtn closeBtn" title="Close">x</button>
+      </div>
+    </div>
+    <div class="contentArea">
+      <div class="contentPages">
+        <div id="root"></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/b34f1e94ad.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
