@@ -25,7 +25,7 @@ const createWindow = () => {
       : `file://${path.join(__dirname, "../build/index.html")}`
   );
 
-  win.setIcon(path.join(__dirname, "./assets/img/icon/icon.png"));
+  win.setIcon(path.join(__dirname, "./img/logo/icon.png"));
   if (isDev) {
     win.webContents.openDevTools();
   }
