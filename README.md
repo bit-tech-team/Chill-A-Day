@@ -1,10 +1,19 @@
-# Chill-A-Day
+<p align="center">
+    <img src="https://drive.google.com/uc?export=view&id=1sDdZIWljsUToD-T1X2miYoS01R8L0f_G"style="border-radius:50%; width:200px; border: 1px solid blue;">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center" style="font-size: 38px; font-weight: 800; letter-spacing: 6px">
+    Chill-A-Day
+</p>
 
+<p align="center">
+    <img src="https://img.shields.io/github/contributors/Bit-Tech-Team/Chill-A-Day?style=plastic">
+    <img src="https://img.shields.io/github/downloads/Bit-Tech-Team/Chill-A-Day/total?style=plastic">
+    <img src="https://img.shields.io/github/repo-size/Bit-Tech-Team/Chill-A-Day?style=plastic">
+    <img src="https://img.shields.io/github/package-json/v/Bit-Tech-Team/Chill-A-Day?style=plastic">
+</p>
 
 ![](https://drive.google.com/uc?export=view&id=1mk0jftx3qlbbCOGeFP6-2UMV40Up8Bz4)
-
 
 ## Todo list
 
@@ -50,5 +59,3 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-
