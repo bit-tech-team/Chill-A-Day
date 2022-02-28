@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Controls.scss";
 import rainSound from "../../assets/sounds/RAIN_ON_WINDOW.500dc4a4.mp3";
 import ambianceSounda from "../../assets/sounds/NIGHT_AMBIENCE.9ed79ed0.mp3";
+import streetSound from "../../assets/sounds/STREET_AMBIENCE.7cf1da37.mp3";
+import fireplace from "../../assets/sounds/fireplace.mp3";
 
 export default function Controls() {
   const useAudio = (url, audTargetId) => {
@@ -25,67 +27,76 @@ export default function Controls() {
     return [playing, toggle];
   };
 
-  const ButtonPlayer = ({ url, audTargetId }) => {
+  const AudioPlayer = ({ url, audTargetId, text, sliderId }) => {
     const [playing, toggle] = useAudio(url, audTargetId);
-    console.log(audTargetId, url);
-    return (
-      <>
-        <button onClick={toggle}>
-          {playing ? (
-            <i className="fas fa-pause" />
-          ) : (
-            <i className="fas fa-play" />
-          )}
-        </button>
-      </>
-    );
-  };
-
-  const InputVolume = () => {
-    const [volume, setVolume] = useState(1);
+    const [volumen, setVolumen] = useState(1);
     const [muted, setMuted] = useState(false);
-    const finalVolume = muted ? 0 : volume ** 2;
-    {
-      /* <p>final volume: {finalVolume.toFixed(3)}</p> */
-    }
+    const finalVolume = muted ? 0 : volumen ** 2;
+    const audioPlayer = useRef()    
+
     return (
-      <input
-        type="range"
-        min={0}
-        max={1}
-        step={0.02}
-        value={volume}
-        onChange={(event) => {
-          setVolume(event.target.valueAsNumber);
-        }}
-      />
-    );
-  };
-  return (
-    <div className="container-controls">
-      <div className="container-controls__content">
+      <div>
         <div className="container-controls__content__title">
-          <ButtonPlayer url={rainSound} audTargetId={"audio-0"} />
-          <p>Rain sound</p>
+          <button onClick={toggle}>
+            {playing ? (
+              <i className="fas fa-pause" />
+            ) : (
+              <i className="fas fa-play" />
+            )}
+          </button>
+          <p>{text}</p>
         </div>
         <div className="container-controls__content__audio">
-          <i className="fas fa-volume-up"></i>
-          <InputVolume />
-          <audio id="audio-0">
-            <source type="audio/mpeg" src={rainSound} />
+          {/* <i className="fas fa-volume-up"></i>
+          <input
+            type="range"
+            min={1}
+            max={100}
+            id={sliderId}
+            defaultValue="50"
+            onChange={(e) => {
+              audioPlayer.current.volume = e.target.value / 100
+              
+            }}
+          /> */}
+          <audio ref={audioPlayer} id={audTargetId} loop>
+            <source type="audio/mpeg" src={url} />
             <p>Your browser doesn't support HTML 5 sounds.</p>
           </audio>
         </div>
-        <br />
-        <div className="container-controls__content__title">
-          <ButtonPlayer url={ambianceSounda} />
-          <p>Nigth ambiance</p>
-        </div>
-        <div className="container-controls__content__audio">
-          <i className="fas fa-volume-up"></i>
-          <InputVolume />
-        </div>
       </div>
+    );
+  };
+
+  return (
+    <div className="container-controls">
+      <AudioPlayer
+        url={rainSound}
+        audTargetId={"audio-0"}
+        text={"Rain sound"}
+        sliderId={"slider-aud-0"}
+      />
+      <br />
+      <AudioPlayer
+        url={ambianceSounda}
+        audTargetId={"audio-1"}
+        text={"Nigth ambiance"}
+        sliderId={"slider-aud-1"}
+      />
+      <br />
+      <AudioPlayer
+        url={streetSound}
+        audTargetId={"audio-2"}
+        text={"Street sound"}
+        sliderId={"slider-aud-2"}
+      />
+      <br />
+      <AudioPlayer
+        url={fireplace}
+        audTargetId={"audio-3"}
+        text={"Fireplace"}
+        sliderId={"slider-aud-3"}
+      />
     </div>
   );
 }
