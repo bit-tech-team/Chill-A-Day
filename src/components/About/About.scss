@@ -14,21 +14,22 @@
       color: azure;
       font-family: "Telma-Variable";
       font-size: $standar-font-size;
-      a {
-        text-decoration: none;
+      button {
+        background: none !important;
+        border: none;
+        padding: 0 !important;
         font-family: "Telma-Variable";
         color: azure;
+        text-decoration: none;
         cursor: pointer;
         &:hover {
-          
           color: rgb(115, 105, 105);
           text-decoration: underline;
         }
-        
       }
     }
 
-    &__theme {
+    /* &__theme {
       width: 200px;
       height: 100%;
       display: inline-block;
@@ -59,6 +60,13 @@
           margin-right: 5px;
         }
       }
-    }
+    } */
   }
+}
+
+.container-privacy-modal,
+.container-about-modal{
+  margin: 5px;
+  padding: 10px;
+
 }
