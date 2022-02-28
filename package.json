@@ -1,8 +1,10 @@
 {
   "name": "chill-a-day",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "main": "src/electron.js",
+  "main": "public/electron.js",
+  "author": "Ridel Saavedra Flores",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -26,7 +28,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\""
+    "electron-dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "electron-builder -c.extraMetadata.main=build/electron.js",
+    "preelectron-pack": "yarn build"
   },
   "eslintConfig": {
     "extends": [
@@ -51,5 +55,15 @@
     "electron": "^16.0.7",
     "electron-builder": "^22.14.5",
     "wait-on": "^6.0.0"
+  },
+  "build": {
+    "appId": "com.ridelsaavedraflores.chilladay",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories":{
+      "buildResources": "assets"
+    }
   }
 }
