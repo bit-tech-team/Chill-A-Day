@@ -1,10 +1,10 @@
 <p align="center">
-    <img src="https://drive.google.com/uc?export=view&id=1sDdZIWljsUToD-T1X2miYoS01R8L0f_G"style="border-radius:50%; width:200px; border: 1px solid blue;">
+    <img src="https://drive.google.com/uc?export=view&id=1sDdZIWljsUToD-T1X2miYoS01R8L0f_G" style="border-radius:50%; width:200px; border: 1px solid blue;">
 </p>
 
-<p align="center" style="font-size: 38px; font-weight: 800; letter-spacing: 6px">
+<h1 align="center" style="font-size: 38px; font-weight: 800; letter-spacing: 6px">
     Chill-A-Day
-</p>
+</h1>
 
 <p align="center">
     <img src="https://img.shields.io/github/contributors/Bit-Tech-Team/Chill-A-Day?style=plastic">
@@ -13,7 +13,9 @@
     <img src="https://img.shields.io/github/package-json/v/Bit-Tech-Team/Chill-A-Day?style=plastic">
 </p>
 
-![](https://drive.google.com/uc?export=view&id=1mk0jftx3qlbbCOGeFP6-2UMV40Up8Bz4)
+<p align="center">
+    <img src="https://drive.google.com/uc?export=view&id=1mk0jftx3qlbbCOGeFP6-2UMV40Up8Bz4">
+</p>
 
 ## Todo list
 
