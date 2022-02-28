@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-![](https://drive.google.com/file/d/1mk0jftx3qlbbCOGeFP6-2UMV40Up8Bz4/view)
+![](https://drive.google.com/uc?export=view&id=1mk0jftx3qlbbCOGeFP6-2UMV40Up8Bz4)
 
 
 ## Todo list
