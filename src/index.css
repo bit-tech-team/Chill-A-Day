@@ -5,10 +5,10 @@ body {
   font-size: 10pt;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #949aa7;
-  background-image: url("../src/assets/img/background.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url("../src/assets/img/background.jpg") !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
 .mainApp {
   display: flex;
