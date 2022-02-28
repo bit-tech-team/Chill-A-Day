@@ -13,6 +13,7 @@
     <img src="https://img.shields.io/github/package-json/v/Bit-Tech-Team/Chill-A-Day?style=plastic">
     <img src="https://img.shields.io/github/stars/Bit-Tech-Team/Chill-A-Day?style=social">
     <img src="https://img.shields.io/github/issues/Bit-Tech-Team/Chill-A-Day">
+    <img src="https://img.shields.io/github/issues-closed/Bit-Tech-Team/Chill-A-Day?style=plastic">
 </p>
 
 <p align="center">
