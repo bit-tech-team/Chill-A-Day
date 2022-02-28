@@ -5,7 +5,7 @@ export default function Banner() {
   return (
       <div className='container-banner'>
           <div className='container-banner__content'>
-              <a href=''>
+              <a href='https://github.com/Bit-Tech-Team'>
               <img src={logo} alt='banner'/>
               </a>
               
