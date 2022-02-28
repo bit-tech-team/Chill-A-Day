@@ -21,7 +21,7 @@
     <img src="https://drive.google.com/uc?export=view&id=1mk0jftx3qlbbCOGeFP6-2UMV40Up8Bz4">
 </p>
 
-## To-do list
+## :sparkles: To-do list
 
 - Make controllers for sound sliders. [:sparkles:](https://github.com/Bit-Tech-Team/Chill-A-Day/issues/1)
 - Make verification method for new playlist link. [:sparkles:](https://github.com/Bit-Tech-Team/Chill-A-Day/issues/2)
