@@ -15,6 +15,7 @@
     <img src="https://img.shields.io/github/issues/Bit-Tech-Team/Chill-A-Day">
     <img src="https://img.shields.io/github/issues-closed/Bit-Tech-Team/Chill-A-Day?style=plastic">
     <img src="https://img.shields.io/github/commit-activity/m/Bit-Tech-Team/Chill-A-Day?style=plastic">
+    <img src="https://img.shields.io/github/license/Bit-Tech-Team/Chill-A-Day?style=plastic">
 </p>
 
 <p align="center">
