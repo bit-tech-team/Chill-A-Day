@@ -29,4 +29,4 @@
 
 ## Last version available
 
-todo
+🚀[v1.0.0](https://github.com/Bit-Tech-Team/Chill-A-Day/releases/tag/v1.0.0)
