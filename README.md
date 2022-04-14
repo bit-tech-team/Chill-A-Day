@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-    <img src="https://drive.google.com/uc?export=view&id=1mk0jftx3qlbbCOGeFP6-2UMV40Up8Bz4">
+    <img src="https://drive.google.com/uc?export=view&id=13ZUcBWmMXHDtyBxq9WUf09DSM4gJQwvf">
 </p>
 
 ## :sparkles: To-do list
