@@ -24,9 +24,9 @@
 
 ## :sparkles: To-do list
 
-- Make controllers for sound sliders. [:sparkles:](https://github.com/Bit-Tech-Team/Chill-A-Day/issues/1)
-- Make verification method for new playlist link. [:sparkles:](https://github.com/Bit-Tech-Team/Chill-A-Day/issues/2)
-- Make loading animation when adding new playlist. [:sparkles:](https://github.com/Bit-Tech-Team/Chill-A-Day/issues/4)
+- [ ] Make controllers for sound sliders. [:sparkles:](https://github.com/Bit-Tech-Team/Chill-A-Day/issues/1)
+- [ ] Make verification method for new playlist link. [:sparkles:](https://github.com/Bit-Tech-Team/Chill-A-Day/issues/2)
+- [ ] Make loading animation when adding new playlist. [:sparkles:](https://github.com/Bit-Tech-Team/Chill-A-Day/issues/4)
 
 ## Last version available
 
