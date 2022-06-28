@@ -9,13 +9,13 @@ const createWindow = () => {
     minWidth: 940,
     minHeight: 560,
     frame: false,
+    show: false,
     resizable: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
-      devTools: true,
+      devTools: false,
       preload: path.join(__dirname, "./preload.js"),
-      /* icon:path.join(__dirname + './assets/img/icon/icon.png',) */
     },
   });
 
@@ -25,7 +25,25 @@ const createWindow = () => {
       : `file://${path.join(__dirname, "../build/index.html")}`
   );
 
+  const splash = new BrowserWindow({
+    width: 700,
+    height: 500,
+    transparent: true,
+    frame: false,
+    resizable: false,
+    alwaysOnTop: true,
+  });
+
+  splash.loadFile(path.join(__dirname, "./splash-screen.html"));
+  splash.center();
+  setTimeout(function () {
+    splash.close();
+    win.center();
+    win.show();
+  }, 6300);
+
   win.setIcon(path.join(__dirname, "./img/logo/icon.png"));
+
   if (isDev) {
     win.webContents.openDevTools();
   }
@@ -55,24 +73,15 @@ const createWindow = () => {
   });
 
   var handleRedirect = (e, url) => {
-    if(url !== win.webContents.getURL()) {
-      e.preventDefault()
-      require('electron').shell.openExternal(url)
+    if (url !== win.webContents.getURL()) {
+      e.preventDefault();
+      require("electron").shell.openExternal(url);
     }
-  }
-  
-  win.webContents.on('will-navigate', handleRedirect)
-  win.webContents.on('new-window', handleRedirect)
+  };
+
+  win.webContents.on("will-navigate", handleRedirect);
+  win.webContents.on("new-window", handleRedirect);
 };
-
-ipcMain.on("hotspot-event", (event, arg) => {
-  event.returnValue = "Message received!";
-  console.log(event);
-  require("electron").shell.openExternal(
-    `https://shakarr.github.io`
-  );
-});
-
 
 app.whenReady().then(() => {
   createWindow();
