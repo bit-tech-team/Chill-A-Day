@@ -9,6 +9,7 @@ const createWindow = () => {
     minWidth: 940,
     minHeight: 560,
     frame: false,
+    show: false,
     resizable: false,
     webPreferences: {
       nodeIntegration: true,
@@ -34,15 +35,16 @@ const createWindow = () => {
     alwaysOnTop: true,
   });
 
-  splash.loadFile(path.join(__dirname, "./splash-screen.html"))
+  splash.loadFile(path.join(__dirname, "./splash-screen.html"));
   splash.center();
   setTimeout(function () {
     splash.close();
     win.center();
     win.show();
-  }, 6400);
+  }, 6300);
 
   win.setIcon(path.join(__dirname, "./img/logo/icon.png"));
+
   if (isDev) {
     win.webContents.openDevTools();
   }
