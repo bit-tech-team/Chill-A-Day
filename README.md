@@ -18,9 +18,7 @@
     <img src="https://img.shields.io/github/license/Bit-Tech-Team/Chill-A-Day?style=plastic">
 </p>
 
-<p align="center">
-    <img src="./img/demo.gif">
-</p>
+https://user-images.githubusercontent.com/31443880/176226844-bb8af898-ab6c-4b55-8a78-cd2aec76b583.mp4
 
 ## :sparkles: To-do list
 
