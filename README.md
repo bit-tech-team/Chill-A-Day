@@ -30,7 +30,7 @@
 
 ## Last version available
 
-🚀[v1.0.0](https://github.com/Bit-Tech-Team/Chill-A-Day/releases/tag/v1.0.0)
+🚀[v1.1.0](https://github.com/Bit-Tech-Team/Chill-A-Day/releases/download/v1.1.0/chill-a-day.exe)
 
 ## Report a bug
 🐛[create a new issue](https://github.com/Bit-Tech-Team/Chill-A-Day/issues/new)
