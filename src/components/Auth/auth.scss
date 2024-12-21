@@ -1,0 +1,24 @@
+@import "../../scss/index.scss";
+
+.auth {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../assets/img/background.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    width: 500px;
+    border-radius: 10px;
+    background-color: $background-primary;
+    padding: 50px 70px;
+
+    &-logo {
+      width: 200px;
+      margin: 0 auto;
+    }
+  }
+}

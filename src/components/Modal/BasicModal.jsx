@@ -1,9 +1,8 @@
-import React from "react";
 import { Modal, Icon } from "semantic-ui-react";
 
-import "./BasicModal.scss";
+import "./basicModal.scss";
 
-export default function BasicModal(props) {
+export const BasicModal = (props) => {
   const { show, setShow, title, children } = props;
 
   const onClose = () => {
@@ -19,4 +18,4 @@ export default function BasicModal(props) {
       <Modal.Content>{children}</Modal.Content>
     </Modal>
   );
-}
+};

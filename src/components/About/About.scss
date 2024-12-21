@@ -10,63 +10,50 @@
   &__content {
     text-align: right;
     margin: 10px;
+    padding: 5px;
+    width: 100%;
+
     span {
-      color: azure;
+      color: $white;
       font-family: "Telma-Variable";
       font-size: $standar-font-size;
+      padding: 5px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
       button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background: none !important;
         border: none;
         padding: 0 !important;
         font-family: "Telma-Variable";
-        color: azure;
+        color: $white;
         text-decoration: none;
         cursor: pointer;
+
         &:hover {
           color: rgb(115, 105, 105);
-          text-decoration: underline;
+        }
+
+        i {
+          margin-left: 20px;
+          margin-top: 2px;
+          font-size: 25px;
+
+          &:hover {
+            color: $danger;
+          }
         }
       }
     }
-
-    /* &__theme {
-      width: 200px;
-      height: 100%;
-      display: inline-block;
-      margin: auto;
-
-      &__text {
-        float: left;
-        width: 175px;
-        height: 25px;
-        margin: auto;
-        span {
-          margin-right: 6px;
-          margin-top: -10px;
-          text-align: center;
-        }
-      }
-
-      &__button {
-        float: right;
-        width: 25px;
-        height: 25px;
-        margin: auto;
-
-        input {
-          width: 20px;
-          height: 15px;
-          margin-top: 5px;
-          margin-right: 5px;
-        }
-      }
-    } */
   }
 }
 
 .container-privacy-modal,
-.container-about-modal{
+.container-about-modal {
   margin: 5px;
   padding: 10px;
-
 }

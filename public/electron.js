@@ -1,9 +1,32 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
+const { autoUpdater } = require("electron-updater");
 const path = require("path");
-const ipc = ipcMain;
+const axios = require("axios");
+const fs = require("fs");
 const isDev = require("electron-is-dev");
+
+const ipc = ipcMain;
+const purchaseFilePath = path.join(app.getPath("userData"), "purchases.json");
+
+let win;
+
 const createWindow = () => {
-  const win = new BrowserWindow({
+  // Leer las compras
+  const getPurchases = () => {
+    if (fs.existsSync(purchaseFilePath)) {
+      return JSON.parse(fs.readFileSync(purchaseFilePath));
+    }
+    return {};
+  };
+
+  // Guardar una nueva compra
+  const savePurchase = (productId) => {
+    const purchases = getPurchases();
+    purchases[productId] = true; // Marca el producto como comprado
+    fs.writeFileSync(purchaseFilePath, JSON.stringify(purchases));
+  };
+
+  win = new BrowserWindow({
     width: 1200,
     height: 680,
     minWidth: 940,
@@ -12,18 +35,12 @@ const createWindow = () => {
     show: false,
     resizable: false,
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
-      devTools: false,
+      nodeIntegration: false,
+      contextIsolation: true,
+      devTools: true,
       preload: path.join(__dirname, "./preload.js"),
     },
   });
-
-  win.loadURL(
-    isDev
-      ? "http://localhost:3000"
-      : `file://${path.join(__dirname, "../build/index.html")}`
-  );
 
   const splash = new BrowserWindow({
     width: 700,
@@ -33,6 +50,12 @@ const createWindow = () => {
     resizable: false,
     alwaysOnTop: true,
   });
+
+  win.loadURL(
+    isDev
+      ? "http://localhost:3000"
+      : `file://${path.join(__dirname, "../build/index.html")}`
+  );
 
   splash.loadFile(path.join(__dirname, "./splash-screen.html"));
   splash.center();
@@ -48,28 +71,26 @@ const createWindow = () => {
     win.webContents.openDevTools();
   }
 
+  ipc.on("purchase-app", async (event, { productId, userId, userEmail }) => {
+    try {
+      const response = await axios.post(
+        `http://localhost:4000/api/payments/create-checkout-session`,
+        { productId, userId, email: userEmail }
+      );
+      const { url } = response.data;
+
+      require("electron").shell.openExternal(url);
+    } catch (error) {
+      console.error("Error creating checkout session:", error);
+    }
+  });
+
   ipc.on("closeApp", () => {
     win.close();
   });
 
   ipc.on("minimizeApp", () => {
     win.minimize();
-  });
-
-  ipc.on("maximizeRestoreApp", () => {
-    if (win.isMaximized()) {
-      win.restore();
-    } else {
-      win.maximize();
-    }
-  });
-
-  win.on("maximize", () => {
-    win.webContents.send("isMaximized");
-  });
-
-  win.on("unmaximize", () => {
-    win.webContents.send("isRestored");
   });
 
   var handleRedirect = (e, url) => {
@@ -82,6 +103,27 @@ const createWindow = () => {
   win.webContents.on("will-navigate", handleRedirect);
   win.webContents.on("new-window", handleRedirect);
 };
+
+autoUpdater.on("update-available", () => {
+  win.webContents.send("update_available");
+});
+
+autoUpdater.on("update-downloaded", () => {
+  win.webContents.send("update_downloaded");
+});
+
+ipc.on("app_version", (event) => {
+  event.sender.send("app_version", { version: app.getVersion() });
+});
+
+ipc.on("restart_app", () => {
+  autoUpdater.quitAndInstall();
+});
+
+autoUpdater.on("error", (message) => {
+  console.error("There was a problem updating the application");
+  console.error(message);
+});
 
 app.whenReady().then(() => {
   createWindow();

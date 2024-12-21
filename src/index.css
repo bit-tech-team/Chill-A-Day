@@ -4,25 +4,33 @@ body {
   padding: 0;
   font-size: 10pt;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* background-image: url("../src/assets/img/background.jpg") !important; */
+  background-color: #0c0c0c;
   color: #949aa7;
-  background-image: url("../src/assets/img/background.jpg") !important;
   background-position: center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
+}
+input,
+button,
+textarea :focus {
+  outline: none;
+}
+i,
+a {
+  -webkit-user-select: auto !important;
+  user-select: auto !important;
+  cursor: pointer !important;
 }
 .mainApp {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
-  border: 1px solid #343848;
+  border: 1px solid black;
   -webkit-box-sizing: border-box;
-  background-image: url();
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .mainApp > .topBar {
@@ -31,8 +39,8 @@ body {
   width: 100%;
   height: 40px;
   border-bottom: 3px solid #343848;
-  background-color: #181023;
   -webkit-user-select: none;
+  background-color: rgb(3, 3, 3);
 }
 
 .topBar > .titleBar {
@@ -46,19 +54,6 @@ body {
   flex-direction: row;
   align-items: center;
   width: 100%;
-}
-
-.titleBar > .toggleButton {
-  width: 45px;
-  height: 40px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 0.2s;
-  cursor: pointer;
 }
 
 .titleBar > .toggleButton:hover {
@@ -74,18 +69,33 @@ body {
 }
 
 .titleBar > .title {
+  color: #fff;
+  display: flex;
+  align-items: center;
   margin-left: 10px;
+  font-size: 18px;
   width: 100%;
   line-height: 30px;
   margin-top: 5px;
   padding-bottom: 5px;
   -webkit-app-region: drag;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.title > p {
+  display: flex;
+  align-self: center;
+  margin-top: 2px;
+  margin-left: 3px;
+  width: 50%;
+  color: #fff;
 }
 
 .topBar > .titleBarBtns {
   display: flex;
   flex-direction: row;
-  width: 120px;
+  width: 80px;
   height: 40px;
 }
 
@@ -104,14 +114,6 @@ body {
   cursor: pointer;
 }
 
-.titleBarBtns > .topBtn:hover {
-  background-color: #272c36;
-}
-
-.titleBarBtns > .topBtn:active {
-  background-color: #4f9fee;
-}
-
 .titleBarBtns > .maximizeBtn {
   font-size: 17px;
   margin: auto;
@@ -120,8 +122,11 @@ body {
 
 .titleBarBtns > .minimizeBtn {
   font-size: 20px;
-  color: white;
   margin: auto;
+  width: 12px;
+  height: 12px;
+  background-color: #28c840;
+  border-radius: 50%;
 }
 
 .titleBarBtns > .restoreBtn {
@@ -131,16 +136,26 @@ body {
 }
 
 .titleBarBtns > .closeBtn {
-  font-size: 15px;
+  font-size: 20px;
   margin: auto;
-  color: white;
+  width: 12px;
+  height: 12px;
+  background-color: #ff6058;
+  border-radius: 50%;
 }
 
-/* .mainApp > .contentArea {
+.mainApp > .contentArea {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   height: 100%;
+}
+
+.contentArea > .leftMenu {
+  width: 200px;
+  height: 100%;
+
+  transition: 0.4s;
 }
 
 .contentArea > .contentPages {
@@ -149,4 +164,76 @@ body {
   -webkit-box-align: center;
   -webkit-box-pack: center;
   display: -webkit-box;
-} */
+}
+
+/* css for update notification */
+#notification {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 200px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+#message {
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: black;
+}
+
+.buttons-update {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#close-button,
+#restart-button {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#close-button:hover,
+#restart-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+#close-button5:focus,
+#restart-button:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+}

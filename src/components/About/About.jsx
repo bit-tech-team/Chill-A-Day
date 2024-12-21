@@ -1,8 +1,14 @@
-import React, { useState } from "react";
-import BasicModal from "../Modal/BasicModal";
-import "./About.scss";
+import { useState } from "react";
 
-export default function About() {
+import { BasicModal } from "../Modal";
+
+import useAuth from "../../hooks/useAuth";
+
+import "./about.scss";
+
+export const About = () => {
+  const { closeSession } = useAuth();
+
   const [showModal, setShowModal] = useState(false);
   const [titleModal, setTitleModal] = useState("");
   const [contentModal, setContentModal] = useState(null);
@@ -16,9 +22,9 @@ export default function About() {
             People are more productive in places they're comfortable in, says a
             study that we made up for the purpose of writing this sentence. That
             said, real experts with real studies recommend you stay away from
-            public spaces, so we made a stand-in to be chill studying or
-            doing some other activity that requires your concentration, then
-            this is your app
+            public spaces, so we made a stand-in to be chill studying or doing
+            some other activity that requires your concentration, then this is
+            your app
           </p>
         </div>
         <div className="container-privacy-modal">
@@ -51,7 +57,10 @@ export default function About() {
         <div className="container-about__content">
           <div className="container-about__content__privacity">
             <span>
-              <button onClick={() => onShowModal()}>about / privacy</button>
+              {/* <button onClick={() => onShowModal()}>about / privacy</button> */}
+              <button onClick={closeSession}>
+                <i className="fas fa-right-to-bracket"></i>
+              </button>
             </span>
           </div>
         </div>
@@ -61,4 +70,4 @@ export default function About() {
       </div>
     </>
   );
-}
+};

@@ -7,7 +7,7 @@
   grid-template-areas:
     "spotify_section banner_section info_section"
     "spotify_section banner_section buttons_section"
-    "coffie_section footer_section footer_section";
+    "footer_section footer_section footer_section";
 }
 
 .spotify_section {
@@ -21,7 +21,6 @@
 
 .banner_section {
   grid-area: banner_section;
-  /* background-color: aqua; */
 }
 
 .info_section {
@@ -30,7 +29,6 @@
 
 .buttons_section {
   grid-area: buttons_section;
-  /* background-color: brown; */
 }
 
 .footer_section {

@@ -6,19 +6,13 @@
   width: 100%;
   flex-direction: column;
 
-  /* background-color: red; */
-
   &__content {
-    /* margin: auto; */
     width: 95%;
-    /* background-color: green; */
 
     &__title {
-      /* margin: auto; */
       display: inline-flex;
       width: 50%;
       height: 22px;
-      /* background-color: aqua; */
 
       p {
         margin: auto;
@@ -26,6 +20,7 @@
         font-family: "Telma-Variable";
         color: azure;
         font-size: $standar-font-size;
+        letter-spacing: 1px;
       }
       button {
         height: 100%;
@@ -46,19 +41,18 @@
     }
 
     &__audio {
-      margin-top: 5px;
+      /* margin-top: 5px; */
       height: 22px;
       display: flex;
-      /* background-color: red; */
+      align-items: center;
 
       i {
-        margin-top: 5px;
         color: azure;
         font-size: 17px;
       }
       input {
-        margin-top: 10px;
-        width: 90%;
+        margin-left: 5px;
+        width: auto;
         height: 5px;
       }
     }
