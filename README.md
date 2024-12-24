@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/github/commit-activity/m/cosmo-frameworks/chillscape">
 </p>
 
-https://user-images.githubusercontent.com/31443880/176226844-bb8af898-ab6c-4b55-8a78-cd2aec76b583.mp4
+https://github.com/user-attachments/assets/83e7f727-79bc-4956-adb1-cf32684ce2b4
 
 ## Last version available
 
