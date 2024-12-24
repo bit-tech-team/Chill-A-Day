@@ -1,20 +1,21 @@
 <p align="center">
-    <img src="https://drive.google.com/uc?export=view&id=15id50RkDQplGHQLVoLKVSX-J6H43iyIS">
+    ![cosmoframeworks](https://github.com/user-attachments/assets/909e6661-1a70-4d1c-8bdf-8ee44e5fe3bf)  
 </p>
+
 
 <h1 align="center" style="font-size: 38px; font-weight: 800; letter-spacing: 6px">
     chillscape
 </h1>
 
 <p align="center">
-    <img src="https://img.shields.io/github/stars/Bit-Tech-Team/Chill-A-Day?style=social">
-    <img src="https://img.shields.io/github/downloads/Bit-Tech-Team/Chill-A-Day/total">
-    <img src="https://img.shields.io/github/package-json/v/Bit-Tech-Team/Chill-A-Day">  
-    <img src="https://img.shields.io/github/contributors/Bit-Tech-Team/Chill-A-Day">  
-    <img src="https://img.shields.io/github/repo-size/Bit-Tech-Team/Chill-A-Day">
-    <img src="https://img.shields.io/github/issues/Bit-Tech-Team/Chill-A-Day">
-    <img src="https://img.shields.io/github/issues-closed/Bit-Tech-Team/Chill-A-Day">
-    <img src="https://img.shields.io/github/commit-activity/m/Bit-Tech-Team/Chill-A-Day">
+    <img src="https://img.shields.io/github/stars/cosmo-frameworks/chillscape?style=social">
+    <img src="https://img.shields.io/github/downloads/cosmo-frameworks/chillscape/total">
+    <img src="https://img.shields.io/github/package-json/v/cosmo-frameworks/chillscapey">  
+    <img src="https://img.shields.io/github/contributors/cosmo-frameworks/chillscape">  
+    <img src="https://img.shields.io/github/repo-size/cosmo-frameworks/chillscape">
+    <img src="https://img.shields.io/github/issues/cosmo-frameworks/chillscape">
+    <img src="https://img.shields.io/github/issues-closed/cosmo-frameworks/chillscape">
+    <img src="https://img.shields.io/github/commit-activity/m/cosmo-frameworks/chillscape">
 </p>
 
 https://user-images.githubusercontent.com/31443880/176226844-bb8af898-ab6c-4b55-8a78-cd2aec76b583.mp4
