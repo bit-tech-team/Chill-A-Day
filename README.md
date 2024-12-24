@@ -1,16 +1,11 @@
-<p align="center">
-    ![cosmoframeworks](https://github.com/user-attachments/assets/909e6661-1a70-4d1c-8bdf-8ee44e5fe3bf)  
-</p>
-
-
-<h1 align="center" style="font-size: 38px; font-weight: 800; letter-spacing: 6px">
+<h1 align="center">
     chillscape
 </h1>
 
 <p align="center">
     <img src="https://img.shields.io/github/stars/cosmo-frameworks/chillscape?style=social">
     <img src="https://img.shields.io/github/downloads/cosmo-frameworks/chillscape/total">
-    <img src="https://img.shields.io/github/package-json/v/cosmo-frameworks/chillscapey">  
+    <img src="https://img.shields.io/github/package-json/v/cosmo-frameworks/chillscape">  
     <img src="https://img.shields.io/github/contributors/cosmo-frameworks/chillscape">  
     <img src="https://img.shields.io/github/repo-size/cosmo-frameworks/chillscape">
     <img src="https://img.shields.io/github/issues/cosmo-frameworks/chillscape">
