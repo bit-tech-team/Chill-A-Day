@@ -11,7 +11,7 @@ export const AuthOptions = (props) => {
     <div className="auth-options flex flex-column">
       <PrimaryButton
         action={openRegister}
-        text="Registrate gratis"
+        text="Registrate"
       ></PrimaryButton>
 
       <PrimaryButton action={openLogin} text="Inicia sesión"></PrimaryButton>

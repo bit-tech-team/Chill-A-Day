@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center" style="font-size: 38px; font-weight: 800; letter-spacing: 6px">
-    Chill-A-Day
+    chillscape
 </h1>
 
 <p align="center">
@@ -21,10 +21,10 @@ https://user-images.githubusercontent.com/31443880/176226844-bb8af898-ab6c-4b55-
 
 ## Last version available
 
-🚀[v1.1.0](https://github.com/Bit-Tech-Team/Chill-A-Day/releases/download/v1.1.0/chill-a-day.exe)
+🚀[v1.1.0](https://github.com/cosmo-frameworks/chillscape/releases/download/v1.1.0/chill-a-day.exe)
 
 ## Report a bug
-🐛[create a new issue](https://github.com/Bit-Tech-Team/Chill-A-Day/issues/new)
+🐛[create a new issue](https://github.com/cosmo-frameworks/chillscape/issues/new)
 
 ## Deploy in local
 

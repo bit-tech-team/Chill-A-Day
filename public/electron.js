@@ -6,26 +6,10 @@ const fs = require("fs");
 const isDev = require("electron-is-dev");
 
 const ipc = ipcMain;
-const purchaseFilePath = path.join(app.getPath("userData"), "purchases.json");
 
 let win;
 
 const createWindow = () => {
-  // Leer las compras
-  const getPurchases = () => {
-    if (fs.existsSync(purchaseFilePath)) {
-      return JSON.parse(fs.readFileSync(purchaseFilePath));
-    }
-    return {};
-  };
-
-  // Guardar una nueva compra
-  const savePurchase = (productId) => {
-    const purchases = getPurchases();
-    purchases[productId] = true; // Marca el producto como comprado
-    fs.writeFileSync(purchaseFilePath, JSON.stringify(purchases));
-  };
-
   win = new BrowserWindow({
     width: 1200,
     height: 680,
@@ -74,7 +58,7 @@ const createWindow = () => {
   ipc.on("purchase-app", async (event, { productId, userId, userEmail }) => {
     try {
       const response = await axios.post(
-        `http://localhost:4000/api/payments/create-checkout-session`,
+        `https://api.shakarzr.com/api/payments/create-checkout-session`,
         { productId, userId, email: userEmail }
       );
       const { url } = response.data;
