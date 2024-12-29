@@ -1,5 +1,5 @@
 {
-  "name": "chill-a-day",
+  "name": "chillscape",
   "version": "1.1.0",
   "private": true,
   "main": "public/electron.js",
@@ -65,7 +65,7 @@
     "wait-on": "^6.0.0"
   },
   "build": {
-    "appId": "com.ridelsaavedraflores.chilladay",
+    "appId": "com.ridelsaavedraflores.chillscape",
     "files": [
       "build/**/*",
       "node_modules/**/*"

@@ -13,38 +13,41 @@
     padding: 5px;
     width: 100%;
 
-    span {
-      color: $white;
-      font-family: "Telma-Variable";
-      font-size: $standar-font-size;
-      padding: 5px;
+    &__privacity {
       display: flex;
       justify-content: flex-end;
       align-items: center;
 
-      button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: none !important;
-        border: none;
-        padding: 0 !important;
+      span {
         font-family: "Telma-Variable";
-        color: $white;
-        text-decoration: none;
-        cursor: pointer;
+        font-size: $standar-font-size;
+        padding: 5px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
 
-        &:hover {
-          color: rgb(115, 105, 105);
-        }
-
-        i {
-          margin-left: 20px;
-          margin-top: 2px;
-          font-size: 25px;
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: none !important;
+          border: none;
+          padding: 0 !important;
+          font-family: "Telma-Variable";
+          text-decoration: none;
+          cursor: pointer;
 
           &:hover {
-            color: $danger;
+            color: rgb(115, 105, 105);
+          }
+
+          i {
+            margin-left: 20px;
+            font-size: 20px;
+
+            &:hover {
+              color: $danger;
+            }
           }
         }
       }

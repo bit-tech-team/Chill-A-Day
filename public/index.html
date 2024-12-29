@@ -5,16 +5,9 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Chillscape</title>
-    <link
-      async
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/semantic-ui@2/dist/semantic.min.css"
-    />
   </head>
 
   <body>
@@ -23,6 +16,7 @@
       <div class="topBar">
         <div class="titleBar">
           <div class="title">
+            <img src="./img/logo/icon.png" class="title-image" />
             chillscape -
             <p id="app-version"></p>
           </div>
@@ -42,64 +36,14 @@
           <div id="notification" class="hidden">
             <p id="message"></p>
             <div class="buttons-update">
-              <button id="close-button">
-                Close
-              </button>
-              <button id="restart-button" class="hidden">
-                Restart
-              </button>
+              <button id="close-button">Close</button>
+              <button id="restart-button" class="hidden">Restart</button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <script
-      src="https://kit.fontawesome.com/b34f1e94ad.js"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      window.addEventListener("DOMContentLoaded", () => {
-        const minimizeButton = document.getElementById("minimizeBtn");
-        const closeButton = document.getElementById("closeBtn");
-        const messageElement = document.getElementById("message");
-        const notificationElement = document.getElementById("notification");
-        const closeButtonUpdate = document.getElementById("close-button");
-        const restartButtonUpdate = document.getElementById("restart-button");
-
-        window.electronAPI.getAppVersion((version) => {
-          document.getElementById("app-version").innerText = `${version}`;
-        });
-
-        window.electronAPI.onUpdateAvailable(() => {
-          messageElement.innerText =
-            "A new update is available. Downloading now...";
-          notificationElement.classList.remove("hidden");
-        });
-
-        window.electronAPI.onUpdateDownloaded(() => {
-          messageElement.innerText =
-            "Update Downloaded. It will be installed on restart. Restart now?";
-          restartButtonUpdate.classList.remove("hidden");
-          notificationElement.classList.remove("hidden");
-        });
-
-        minimizeButton.addEventListener("click", () => {
-          window.electronAPI.minimizeApp();
-        });
-
-        closeButton.addEventListener("click", () => {
-          window.electronAPI.closeApp();
-        });
-
-        restartButtonUpdate.addEventListener("click", () => {
-          window.electronAPI.restartApp();
-        });
-
-        closeButtonUpdate.addEventListener("click", () => {
-          notificationElement.classList.add("hidden");
-        });
-      });
-    </script>
+    <script src="./js/windowControl.js"></script>
   </body>
 </html>

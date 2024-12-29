@@ -9,9 +9,11 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const client = new BackendClient();
   const [auth, setAuth] = useState({});
+  const [isPremium, setIsPremium] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [token, setToken] = useState(localStorage.getItem("token")); // Centralizamos el token en un estado
 
-  const CHECK_INTERVAL = 60000;
+  const CHECK_INTERVAL = 6000;
 
   const isTokenExpired = (token) => {
     try {
@@ -19,7 +21,7 @@ const AuthProvider = ({ children }) => {
       if (!decoded.exp) {
         return true;
       }
-      
+
       const currentTime = Date.now() / 1000;
       return decoded.exp < currentTime;
     } catch (error) {
@@ -27,25 +29,51 @@ const AuthProvider = ({ children }) => {
     }
   };
 
+  // Función para actualizar el token desde cualquier parte de la app
+  const updateToken = (newToken) => {
+    if (newToken) {
+      localStorage.setItem("token", newToken);
+    } else {
+      localStorage.removeItem("token");
+    }
+    setToken(newToken);
+  };
+
   const closeSession = () => {
     localStorage.removeItem("token");
+    setToken(null); // Actualizamos el estado del token
     setAuth({});
   };
 
-  const loadUserProfile = async () => {
-    setLoading(true);
-    const token = localStorage.getItem("token");
+  const userIsPremium = async (userId, productId) => {
+    try {
+      const { data } = await client.get(
+        `/api/users/user-product-status/${userId}/${productId}`
+      );
+      console.log(data);
+      setIsPremium(data.hasPurchased);
+    } catch (error) {
+      setIsPremium(false);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    if (token && isTokenExpired(token)) {
+  const loadUserProfile = async () => {
+    if (!token) return; // Si no hay token, no hacemos nada
+
+    if (isTokenExpired(token)) {
       closeSession();
       toast.info("Tu sesión ha expirado, por favor inicia sesión nuevamente");
-      setLoading(false);
       return;
     }
 
     try {
+      setLoading(true);
       const { data } = await client.get(`/api/users/profile`);
       setAuth(data);
+
+      await userIsPremium(data._id, "6756208565c78e46864e6d0a");
     } catch {
       setAuth({});
     } finally {
@@ -53,27 +81,39 @@ const AuthProvider = ({ children }) => {
     }
   };
 
+  // Efecto para cargar el perfil cuando cambia el token
   useEffect(() => {
     loadUserProfile();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token]);
 
+  // Efecto para verificar expiración periódica del token
+  useEffect(() => {
     const interval = setInterval(() => {
-      const token = localStorage.getItem("token");
       if (token && isTokenExpired(token)) {
         closeSession();
       }
     }, CHECK_INTERVAL);
 
     return () => clearInterval(interval);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [token]);
 
   return (
-    <AuthContext.Provider value={{ auth, loading, setAuth, closeSession }}>
+    <AuthContext.Provider
+      value={{
+        auth,
+        loading,
+        isPremium,
+        setAuth,
+        setIsPremium,
+        closeSession,
+        updateToken,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
 };
 
 export { AuthProvider };
-
 export default AuthContext;

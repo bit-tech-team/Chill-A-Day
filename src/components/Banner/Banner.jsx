@@ -1,4 +1,4 @@
-import logo from "../../assets/img/logo/logo.webp";
+import logo from "../../assets/img/logo/cosmoframeworks.png";
 
 import "./banner.scss";
 
@@ -15,7 +15,7 @@ export const Banner = () => {
   return (
     <div className="container-banner">
       <div className="container-banner__content">
-        <a href="https://shakarzr.com">
+        <a href="https://github.com/cosmo-frameworks">
           <div>
             <style>
               {`

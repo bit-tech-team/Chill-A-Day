@@ -30,3 +30,17 @@ $white: #fff;
 $background-color_1: #0f1923;
 $background-color_2: #ff4655;
 $background-color_3: #fff;
+
+$theme-dark: (
+  background: #121212,
+  text: #ffffff,
+  primary: #ff4655,
+);
+
+$theme-light: (
+  background: rgb(240, 240, 240),
+  text: #000000,
+  primary: #ff4655,
+);
+
+$theme: $theme-dark;

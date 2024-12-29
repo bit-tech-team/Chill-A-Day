@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { Icon } from "semantic-ui-react";
 
-import rainSound from "../../assets/sounds/RAIN_ON_WINDOW.500dc4a4.mp3";
-import ambianceSounda from "../../assets/sounds/NIGHT_AMBIENCE.9ed79ed0.mp3";
-import streetSound from "../../assets/sounds/STREET_AMBIENCE.7cf1da37.mp3";
-import fireplace from "../../assets/sounds/fireplace.mp3";
+import useSound from "../../hooks/useSound";
 
 import "./controls.scss";
 
 export const Controls = () => {
+  const { sounds, deleteSound } = useSound();
+
   const useAudio = (url) => {
     const audio = useRef(new Audio(url));
     const [playing, setPlaying] = useState(false);
@@ -30,7 +30,7 @@ export const Controls = () => {
     return [audio, playing, toggle];
   };
 
-  const AudioPlayer = ({ url, text }) => {
+  const AudioPlayer = ({ url, text, onDelete }) => {
     const [audio, playing, toggle] = useAudio(url);
     const [volume, setVolume] = useState(50);
 
@@ -44,23 +44,22 @@ export const Controls = () => {
       <div>
         <div className="container-controls__content__title">
           <button onClick={toggle}>
-            {playing ? (
-              <i className="fas fa-pause" />
-            ) : (
-              <i className="fas fa-play" />
-            )}
+            {playing ? <Icon name="pause" /> : <Icon name="play" />}
           </button>
           <p>{text}</p>
         </div>
         <div className="container-controls__content__audio">
-          <i className="fas fa-volume-up"></i>
           <input
             type="range"
             min={0}
+            className="range"
             max={100}
             value={volume}
             onChange={handleVolumeChange}
           />
+          <button onClick={onDelete} className="delete-button">
+            <Icon name="trash" />
+          </button>
         </div>
       </div>
     );
@@ -68,13 +67,16 @@ export const Controls = () => {
 
   return (
     <div className="container-controls">
-      <AudioPlayer url={rainSound} text={"Rain sound"} />
-      <br />
-      <AudioPlayer url={ambianceSounda} text={"Night ambiance"} />
-      <br />
-      <AudioPlayer url={streetSound} text={"Street sound"} />
-      <br />
-      <AudioPlayer url={fireplace} text={"Fireplace"} />
+      {sounds.map((sound) => (
+        <div key={sound.id}>
+          <AudioPlayer
+            url={sound.sound}
+            text={sound.title}
+            onDelete={() => deleteSound(sound.id)}
+          />
+          <br />
+        </div>
+      ))}
     </div>
   );
 };

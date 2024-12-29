@@ -15,7 +15,7 @@ import "./loginForm.scss";
 
 export const LoginForm = (props) => {
   const { openRegister, goBack } = props;
-  const { setAuth } = useAuth();
+  const { setAuth, updateToken } = useAuth();
 
   const client = new BackendClient();
   const [showPassword, setShowPassword] = useState(false);
@@ -29,7 +29,7 @@ export const LoginForm = (props) => {
     onSubmit: async (formValue) => {
       try {
         const { data } = await client.post("/api/users/login", formValue);
-        localStorage.setItem("token", data.token);
+        updateToken(data.token);
         setAuth(data);
       } catch (error) {
         if (error instanceof AxiosError && error.response) {

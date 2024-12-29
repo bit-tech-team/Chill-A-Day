@@ -7,6 +7,7 @@ import "./app.scss";
 
 const App = () => {
   const { auth, loading } = useAuth();
+  console.log(auth);
 
   if (loading) return <p>cargando...</p>;
 

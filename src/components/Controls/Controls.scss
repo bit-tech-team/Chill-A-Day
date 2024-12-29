@@ -2,46 +2,29 @@
 
 .container-controls {
   display: flex;
-  height: 100%;
   width: 100%;
   flex-direction: column;
+  padding: 5px;
 
   &__content {
     width: 95%;
+    background-color: blue;
 
     &__title {
       display: inline-flex;
-      width: 50%;
+      align-items: center;
+      width: auto;
       height: 22px;
 
       p {
-        margin: auto;
         margin-left: -6px;
         font-family: "Telma-Variable";
-        color: azure;
         font-size: $standar-font-size;
-        letter-spacing: 1px;
-      }
-      button {
-        height: 100%;
-        background: none;
-        outline: none;
-        border: none;
-        margin-top: auto;
-        cursor: pointer;
-
-        i {
-          margin-top: 5.5px;
-          margin-left: -5px;
-          margin-right: 10px;
-          font-size: 14px;
-          color: azure;
-        }
+        letter-spacing: 1.2px;
       }
     }
 
     &__audio {
-      /* margin-top: 5px; */
       height: 22px;
       display: flex;
       align-items: center;
@@ -50,6 +33,34 @@
         color: azure;
         font-size: 17px;
       }
+
+      .delete-button{
+        margin-top: 5px;
+      }
+
+      .range {
+        width: auto;
+        height: 10px;
+        margin-top: 8px;
+        -webkit-appearance: none;
+        background: #111;
+        outline: none;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+      }
+
+      .range::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $background-color_2;
+        cursor: pointer;
+        border: 4px solid #333;
+        box-shadow: -407px 0 0 400px $background-color_2;
+      }
+
       input {
         margin-left: 5px;
         width: auto;
@@ -59,3 +70,19 @@
   }
 }
 
+button {
+  height: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  margin-top: auto;
+  cursor: pointer;
+
+  i {
+    margin-top: 5.5px;
+    margin-left: -5px;
+    margin-right: 10px;
+    font-size: 14px;
+    color: azure;
+  }
+}

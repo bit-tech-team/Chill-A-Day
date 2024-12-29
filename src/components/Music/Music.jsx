@@ -3,28 +3,21 @@ import { toast } from "react-toastify";
 
 import { PrimaryButton } from "../PrimaryButton";
 
+import useSound from "../../hooks/useSound";
+
 import "./music.scss";
+import { Icon } from "semantic-ui-react";
 
 export const Music = () => {
-  const [playlistId, setPlaylistId] = useState("37i9dQZF1DWZoPCylYnvtU");
+  const { addSound } = useSound();
+
   const [inputValue, setInputValue] = useState("");
+  const [file, setFile] = useState(null);
 
   const handleInput = () => {
-    const spotifyUrlPattern = /^(https:\/\/open\.spotify\.com\/embed\/playlist\/|https:\/\/open\.spotify\.com\/playlist\/)([a-zA-Z0-9]+)(\?.*)?$/;
-    const plainIdPattern = /^[a-zA-Z0-9]+$/;
-
-    if (spotifyUrlPattern.test(inputValue)) {
-      const match = inputValue.match(spotifyUrlPattern);
-      if (match) {
-        setPlaylistId(match[2]);
-      }
-    } else if (plainIdPattern.test(inputValue)) {
-      setPlaylistId(inputValue);
-    } else {
-      toast.warn(
-        "Por favor, introduce una URL válida de Spotify o un ID de playlist."
-      );
-    }
+    const fileInput = document.getElementById("soundFile");
+    setFile(fileInput.files[0]);
+    fileInput.value = "";
   };
 
   return (
@@ -32,37 +25,68 @@ export const Music = () => {
       <div className="container-spotify__title">
         <span>
           <p>
-            Añade y escucha <br /> tu playlist favorita
+            Añade y escucha <br /> sonidos relajantes
           </p>
         </span>
       </div>
 
       <div className="container-spotify__content">
-        <iframe
-          src={`https://open.spotify.com/embed/playlist/${playlistId}`}
-          id="playlist"
-          title="playlist"
-          width="100%"
-          height="380"
-          frameBorder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        ></iframe>
+        <div id="FileUpload" className="container-upload">
+          <input
+            id="soundFile"
+            type="file"
+            accept="audio/mp3"
+            onChange={handleInput}
+          />
+          <div className="container-upload__content">
+            <span>
+              {file === null ? (
+                <Icon name="cloud upload" />
+              ) : (
+                <Icon name="file audio" />
+              )}
+            </span>
+            {file === null ? (
+              <p className="paragraph-def">
+                Has click para seleccionar un archivo
+              </p>
+            ) : (
+              <p className="paragraph-def">
+                Archivo seleccionado: <b>{file.name}</b>
+              </p>
+            )}
+          </div>
+        </div>
       </div>
 
       <div className="container-spotify__link">
         <input
-          id="linkPlaylist"
+          id="soundTitle"
           type="text"
+          placeholder="Título del sonido"
           value={inputValue}
+          className="paragraph-def"
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Introduce la URL de tu playlist"
         />
-
         <div className="container-button-add">
           <PrimaryButton
-            action={() => handleInput()}
+            action={() => {
+              if (!file) {
+                toast.warn("Selecciona un archivo de sonido.");
+                return;
+              }
+
+              if (!inputValue.trim()) {
+                toast.warn("Introduce un título para el sonido.");
+                return;
+              }
+
+              addSound(file, inputValue);
+              setInputValue("");
+              setFile(null);
+            }}
             text="Añadir"
-          ></PrimaryButton>
+          />
         </div>
       </div>
     </div>
